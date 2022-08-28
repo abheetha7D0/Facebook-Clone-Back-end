@@ -5,8 +5,12 @@ const app = express();
 const port =4000;
 
 app.use(express.json())
+
 const user = require("./routes/user")
 app.use("/user",user)
+
+const post = require("./routes/post")
+app.use("/posts",post);
 
 const url = 'mongodb://localhost/faceBook_Clone'
 mongoose.connect(url,{useNewUrlParser:true})
